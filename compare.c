@@ -1,12 +1,20 @@
-// Adição da biblioteca para função fgets.
+#include <stdio.h>
+#include <string.h>
+
+#define SIZE 100
+
 int main()
 {
-   char a[100], b[100]; // Utilizar macros.
+   char a[SIZE], b[SIZE]; 
 
-   printf("Enter a string\n"); // Apenas uma string é dada como entrada.
-   get(b); // Utilização de um método que não é recomendado. Usar fgets!
+   // Reads the two input strings to be compared.
+   printf("Enter the first string:\n"); 
+   fgets(a, SIZE, stdin);
+   printf("Enter the second string:\n");
+   fgets(b, SIZE, stdin); 
 
-   if (strcmp(a,b) == 10) // A condição está correta?
+   // Tests if the two strings are equal or not.
+   if (strcmp(a,b) == 0) 
       printf("Entered strings are equal.\n");
    else
       printf("Entered strings are not equal.\n");
